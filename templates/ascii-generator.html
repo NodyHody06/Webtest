@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASCII Image Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style1.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>ASCII Image Generator</h1>
+        <form id="upload-form" method="POST" action="{{ url_for('upload_file') }}" enctype="multipart/form-data">
+            <label for="file">Select an image:</label>
+            <input type="file" id="file" name="file" accept="image/*" required><br>
+
+            <label for="scaleFactor">Scale Factor:</label>
+            <input type="number" id="scaleFactor" name="scaleFactor" min="1" max="100" value="40"><br>
+
+            <label for="oneCharWidth">Character Width:</label>
+            <input type="number" id="oneCharWidth" name="oneCharWidth" min="5" max="20" value="12"><br>
+
+            <label for="oneCharHeight">Character Height:</label>
+            <input type="number" id="oneCharHeight" name="oneCharHeight" min="5" max="30" value="18"><br>
+             
+            <div class="switch-container">
+                <label class="color-switch-label" for="removeBg">Remove Background:</label>
+                <label class="switch">
+                    <input type="checkbox" id="removeBg" name="removeBg">
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <!-- Add color option checkbox -->
+            <div class="switch-container">
+                <label class="color-switch-label" for="colorOption">Generate Colored ASCII:</label>
+                <label class="switch">
+                    <input type="checkbox" id="colorOption" name="colorOption">
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <button type="submit">Generate ASCII Image</button>
+        </form>
+
+        <div class="loading" id="loading">
+            <div class="loading-spinner"></div>
+        </div>
+
+        <div id="preview" class="box">
+            <div id="uploaded-image"></div>
+        </div>
+
+        <div id="result" class="box">
+            <img id="ascii-image" src="" alt="Generated ASCII Image">
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
