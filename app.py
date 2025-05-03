@@ -6,17 +6,17 @@ from pages.routes import pages_bp
 #app = Flask(__name__, static_folder='static')
 #setup_routes(app)
 
-def create_app():
-    app = Flask(__name__)
+#def create_app():
+app = Flask(__name__)
 
-    #Register blueprints
-    app.register_blueprint(ascii_bp)
-    app.register_blueprint(music_bp, url_prefix='/music')
-    app.register_blueprint(pages_bp)
+#Register blueprints
+app.register_blueprint(ascii_bp)
+app.register_blueprint(music_bp, url_prefix='/music')
+app.register_blueprint(pages_bp)
 
-    return app
+   #return app
 
 
-if __name__ == "__main__":
+'''if __name__ == "__main__":
     app = create_app()
-    app.run(debug=True)
+    app.run(debug=True)'''
