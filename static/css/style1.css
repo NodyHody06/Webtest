@@ -1,0 +1,342 @@
+:root {
+    --max-width: 960px;
+    --min-tablet: 767px;
+}
+
+/* Media query converted from mixin */
+@media screen and (min-width: 767px) {
+    .split p {
+        flex-basis: 48%;
+    }
+    .comparison-slider .overlay {
+        display: block;
+    }
+}
+
+@font-face {
+    font-family: "FreePixel";
+    src: url("https://sadhost.neocities.org/fonts/FreePixel.ttf") format("truetype");
+}
+ /* Basic reset */
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "FreePixel", Arial, sans-serif;
+    background-image: url(/static/images/eyeforaneye.png);         
+    color: #cac9c9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-y: hidden; /* Disable scroll initially */
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+.container {
+    position: relative;
+    background-color: #1c1c1c;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    margin: 2px 5px;
+    /* Remove overflow and max-height here */
+}
+
+/* Expanded body scroll state */
+body.scrollable {
+    overflow-y: auto; /* Enable scroll when .container expands */
+}
+
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+iframe {
+  aspect-ratio: 16/9;
+}
+
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+main {
+  display: grid;
+  place-items: center;
+  min-height: 50vh;
+  margin: 2px 5px;
+}
+
+.container2 {
+  display: grid;
+  place-content: center;
+  position:sticky;
+  overflow: hidden;
+  border-radius: 1rem;
+  --position: 50%;
+}
+
+.image-container {
+  max-width: 800px;
+  max-height: 90vh;
+  aspect-ratio: 1/1;
+}
+
+.slider-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left;
+}
+
+.image-before {
+  position: absolute;
+  inset: 0;
+  width: var(--position);
+}
+
+.slides {
+    position: absolute;
+    inset: 0;
+    cursor: pointer;
+    opacity: 0;
+    /*for Firefox */
+    height: 100%;
+    width: 100%;
+}
+
+
+h1 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #444444;
+}
+
+label {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+input[type="file"],
+input[type="range"],
+input[type="checkbox"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #cfcbcb;
+    color: #292626;
+}
+
+input[type="file"] {
+    width: calc(100% - 22px); /* Full width minus padding */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #1c1c1c;
+    border-radius: 4px;
+    background-color: #2a2a2a; /* Darker background */
+    color: #fff; /* White text */
+    cursor: pointer;
+}
+
+input[type="file"]::-webkit-file-upload-button {
+    background: #FFD700; /* Yellow for button */
+    border: none;
+    color: black; /* Black text */
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="range"] {
+    transition: all 0.3s ease;
+}
+
+button {
+    background-color: #FFD700;
+    
+    font-weight: bold;
+    color: rgba(22, 22, 22, 0.37);
+    font-family: "FreePixel";
+    font-size: 150pt;
+    text-align: center;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 0;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #FFC107;
+}
+
+#result, #preview {
+    margin-top: 20px;
+    display: none; /* Initially hidden */
+    border: 1px solid #1c1c1c;
+    border-radius: 4px;
+    padding: 10px;
+    background-color: #2a2a2a;
+}
+
+img {
+    max-width: 100%;
+    margin-top: 10px;
+}
+
+.preview-container {
+    position: relative;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.remove-preview {
+    display : none;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: transparent;
+    border: none;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.remove-preview svg {
+    fill: rgb(165, 155, 155);
+    width: 20px;
+    height: 20px;
+    transition: fill 0.3s ease;
+}
+
+.remove-preview:hover svg {
+    fill: darkred;
+}
+
+/* Loading spinner */
+.loading {
+    display: none;
+    margin-top: 20px;
+}
+
+.loading-spinner {
+    border: 4px solid #f3f3f3; /* Light grey */
+    border-top: 4px solid #FFC107; /* Blue */
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto;
+}
+
+.switch-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.color-switch-label {
+        font-size: 14px;
+        margin-right: 10px;
+        display: inline-block;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 20px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #FFD700; /* Yellow when enabled */
+}
+
+input:checked + .slider:before {
+    transform: translateX(20px);
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Media Queries */
+@media (max-width: 500px) {
+    .container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.25rem;
+    }
+
+    button {
+        font-size: 0.9rem;
+    }
+
+}
+
+@media (max-width : 800px) {
+    body {
+        flex-direction: column-reverse;
+        margin: 1px;
+    }
+}

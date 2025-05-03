@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - ASCII Image Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/music.css') }}">
+ 
+    <script src="https://kit.fontawesome.com/9574fb689b.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <link href='https://fonts.googleapis.com/css?family=Allerta' rel='stylesheet'>
+
+
+        <h2>Music cures my moods</h2>
+
+        <!-- YouTube URL Section -->
+        <div>
+            <h3>Upload and Play YouTube Audio</h3>
+            <input type="text" id="yt-url" placeholder="Enter YouTube URL">
+            <button id="download-yt-btn">Upload</button>
+            <p id="yt-message-box"></p>
+        </div>
+
+        <!-- Queue Control Buttons -->
+        <div class="queue-controls">
+            <label id="prev"><i class="fa-solid fa-left-long"></i></label>
+            <label id="next"><i class="fa-solid fa-right-long"></i></label>
+        </div>
+
+        <!-- Display Queue -->
+        <ul id="audio-queue" class="audio-queue"></ul>
+
+        <!-- Remove from queue-->
+        <div id="audio-queue-container">
+            <ul id="audio-queue"></ul>
+        </div>
+        
+
+        <div  id="audio-container" class="container-audio">
+            <audio controls  id="music">
+                    Your browser dose not Support the audio Tag
+            </audio>
+            <div class="audio-controls">
+                <button id="download-button" type="button">Download Audio</button>
+            </div>
+        </div>
+        
+        <!-- Display the current file name here -->
+        <div id="fileName"></div> <!-- Add this div -->
+
+        <div class="bars">
+            <div class="bars__item"></div>
+            <div class="bars__item"></div>
+            <div class="bars__item"></div>
+            <div class="bars__item"></div>
+            <div class="bars__item"></div>
+            <div class="bars__item"></div>
+            <div class="bars__item"></div>
+            <div class="bars__item"></div>
+            <div class="bars__item"></div>
+            <div class="bars__item"></div>
+            <div class="bars__item"></div>
+            <div class="bars__item"></div>
+            <div class="bars__item"></div>
+            <div class="bars__item"></div>
+            <div class="bars__item"></div>
+            <div class="bars__item"></div>
+            <div class="bars__item"></div>
+            <div class="bars__item"></div>
+            <div class="bars__item"></div>
+            <div class="bars__item"></div>
+            <div class="bars__item"></div>
+            <div class="bars__item"></div>
+            <div class="bars__item"></div>
+            <div class="bars__item"></div>
+            <div class="bars__item"></div>
+            <div class="bars__item"></div>
+            <div class="bars__item"></div>
+            <div class="bars__item"></div>
+            <div class="bars__item"></div>
+            <div class="bars__item"></div>
+            <div class="bars__item"></div>
+            <div class="bars__item"></div>
+            <div class="bars__item"></div>
+            <div class="bars__item"></div>
+            <div class="bars__item"></div>
+            <div class="bars__item"></div>
+        </div>
+    </div>
+
+    <div class="Myplaylist">
+        <h1>My Music Preference</h1>
+        <p>My music taste is pretty unpredictable—what I listen to depends a lot on my mood, the situation, and even the place.
+            I mostly prefer songs that creates soothing ibes, helping me to fully immerse myself in the present moment.
+            Open to any genre and welcomed to all artists, no hate no discrimination, just songs 
+            that feels relevant for that moment. </p>
+            
+            <p>Interesting Fact :- I often don't remember the names of the songs or the lyrics, however it that doesn't stop me from enjoying the music.</p>
+
+            <p>About my playlist, it's bit of a mixed bag, including variety of genre and artists, taking you
+                 on an emotional rollercoaster. The variety is partly thanks to my reluctance to organize it, and thats the way I am.
+        </p>
+    </div>
+    
+       
+        <!-- 1. Load FFmpeg.min.js first -->
+        <script src="https://unpkg.com/@ffmpeg/ffmpeg@0.11.6/dist/ffmpeg.min.js"></script>
+
+        <!-- 2. Then your handler and conversion scripts that use FFmpeg -->
+        <script src="{{ url_for('music.static', filename='js/ffmpeg-handler.js') }}"></script>
+        
+        <!-- 3. Finally, load other app logic -->
+        <script src="{{ url_for('music.static', filename='js/music.js') }}"></script>
+
+
+</body>    

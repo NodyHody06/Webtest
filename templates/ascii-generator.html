@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASCII Image Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style1.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>ASCII Image Generator</h1>
+        <form id="upload-form" method="POST" action="{{ url_for('ascii.upload_file') }}" enctype="multipart/form-data">
+            <label for="file">Select an image:</label>
+            <input type="file" id="file" name="file" accept="image/*" required><br>
+
+            <label for="scaleFactor">Scale Factor: <span id="value1"></span></label>
+            <input type="range" id="scaleFactor" name="scaleFactor" min="1" max="100" value="40"><br>
+
+            <label for="oneCharWidth">Character Width: <span id="value2"></span></label>
+            <input type="range" id="oneCharWidth" name="oneCharWidth" min="5" max="20" value="12"><br>
+
+            <label for="oneCharHeight">Character Height: <span id="value3"></span></label>
+            <input type="range" id="oneCharHeight" name="oneCharHeight" min="5" max="30" value="18"><br>
+             
+            <div class="switch-container">
+                <label class="color-switch-label" for="removeBg">Remove Background:</label>
+                <label class="switch">
+                    <input type="checkbox" id="removeBg" name="removeBg">
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <!-- Add color option checkbox -->
+            <div class="switch-container">
+                <label class="color-switch-label" for="colorOption">Generate Colored ASCII:</label>
+                <label class="switch">
+                    <input type="checkbox" id="colorOption" name="colorOption">
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <button type="submit">Generate ASCII Image</button>
+        </form>
+
+        <div class="loading" id="loading">
+            <div class="loading-spinner"></div>
+        </div>
+
+        <div id="preview" class="box">
+            <div id="uploaded-image"></div>
+        </div>
+
+        <div id="result" class="box">
+            <img id="ascii-image" src="" alt="Generated ASCII Image">
+            <button id="remove-result" style="display: none;"> 
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="20px" height="20px">
+                <path d="M0 0h24v24H0z" fill="none"/>
+                <path d="M18.3 5.71a1 1 0 00-1.42 0L12 10.59 7.12 5.7a1 1 0 10-1.41 1.42L10.59 12l-4.88 4.88a1 1 0 001.41 1.41L12 13.41l4.88 4.88a1 1 0 001.41-1.41L13.41 12l4.88-4.88a1 1 0 000-1.41z"/>
+                </svg>
+             </button>
+        </div>
+        
+        <!-- Download Button -->
+        <button id="download-btn" style="display:none;">Download ASCII Image</button>
+
+    </div>
+    
+    <main>
+        <div class = "container2">
+                <div class="image-container" style ="width : 300px;height : 300px;">
+                <img
+                    class="image-before slider-image"
+                    src = "{{ url_for('static', filename='images/bwm.jpg') }}"
+                    alt="normal"
+                />
+                <img
+                    class="image-after slider-image"
+                    src ="{{ url_for('static', filename='images/output.png') }}"
+                    alt="ascii image"
+                />
+                </div>
+                <!-- step="10" -->
+                <input
+                type="range"
+                min="0"
+                max="100"
+                value="50"
+                aria-label="Percentage of before photo shown"
+                class="slides"
+            />
+            <div class="slider-line" aria-hidden="true"></div>
+            <div class="slider-button" aria-hidden="true">
+            </div>
+        </div>
+    </main>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/slider.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/expand.js') }}"></script>
+    
+</body>
+</html>

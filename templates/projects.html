@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - ASCII Image Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/project.css') }}">
+</head>
+<body class="main">
+    <div class="parent">
+        <figure class="container">
+            <img src="{{ url_for('static', filename='images/streetfight.gif') }}" alt="gif-image" class="gif-image" style="width:80px;height:70px;">
+            <h1 class="head">Welcome to ASCII Art Generator</h1>
+            <p class="sub">Generate amazing ASCII art from images with ease. Get started by clicking below!</p>
+            <a href="ascii-generator.html" class="ascii">Go to ASCII Image Generator</a>
+        </figure>
+        <figure class="container1">
+            <img src="{{ url_for('static', filename='images/pixels_and_things.gif') }}" alt="gif-image" class="gif-image" style="width:70px;height:60px;">
+            <h1 class="head">Welcome to Falling Sand simulation</h1>
+            <p class="sub">Interact in a captivating physics-based simulation!</p>
+            <p class="sub2">- <a href="https://thecodingtrain.com/challenges/180-falling-sand">The Coding Train</p>
+            <a href="falling_sand.html" class="ascii">Let's play with sand.</a>
+            
+        </figure>
+        <div class="child4">
+            <div class="header">
+                <img src="{{ url_for('static', filename='images/emojino.gif') }}" alt="gif-image1" class="gif-img" style="width: 100px;height:70px;">
+                <p>Well</p>
+                <p>This is my</p>
+                <h1>Project Section</h1>
+            </div>
+        </div>
+</body>

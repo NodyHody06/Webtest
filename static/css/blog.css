@@ -1,0 +1,165 @@
+@font-face {
+    font-family: "FreePixel";
+    src: url("https://sadhost.neocities.org/fonts/FreePixel.ttf") format("truetype");
+}
+
+:root {
+    --background: #0E191A;
+    --main-color: #7107AF;
+    --main-color-dk: #441261;
+    --accent-1: #B5E61D;
+    --accent-2: #EB53D3;
+    --content-spacing: 5px;
+    --background-img: url('/static/images/image.png');
+    --banner: url('/sadgrl/assets/images/full-banner-new.png');
+    --titleBars: url('/sadgrl/assets/images/tiny-bar-2.png');
+    --text-color: white;
+    --link-color: var(--accent-1);
+    --border: 1px solid black;
+    --arrows: url('/sadgrl/assets/images/arrow.png');
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "FreePixel", Arial, sans-serif;
+    background-color: var(--background);
+    color: var(--text-color);
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.blog-main {
+    padding: 40px 20px;
+}
+
+.sticker-left {
+    width: 150px; /* or any size you want */
+    position: absolute; /* or fixed, if it's meant to "stick" */
+    left: 10px;
+    top: 100px;
+    z-index: 10;
+}
+
+.sticker-right {
+    width: 150px; /* or any size you want */
+    position: absolute; /* or fixed, if it's meant to "stick" */
+    right: 10px;
+    top: 100px;
+    z-index: 10;
+}
+
+.sticker-right:hover,
+.sticker-left:hover{
+    transform: scale(1.1) rotate(-5deg);
+    filter: brightness(1.2);
+    transition: transform 0.2s ease;
+}
+
+.blog-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #111;
+    border: 2px solid var(--accent-1);
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.blog-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.header-gif {
+    max-width: 200px;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+.header-gif:hover {
+    filter: brightness(1.2) contrast(5);
+    transition: filter 0.2s ease;
+}
+
+.blog-header h1 {
+    color: var(--accent-1);
+    font-size: 2.5rem;
+    margin: 10px 0;
+}
+
+.blog-subtitle {
+    color: var(--accent-2);
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.blog-posts {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+
+.post {
+    background-color: #222;
+    padding: 20px;
+    border-left: 4px solid var(--accent-1);
+    border-radius: 6px;
+}
+
+.post-image {
+    width: 50px;
+    height: auto;
+    flex-shrink: 0;
+    border-radius: 4px;
+}
+
+.post-title {
+    font-size: 1.6rem;
+    color: var(--accent-1);
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* space between image and title */
+}
+
+.post-date {
+    font-size: 0.9rem;
+    color: #aaa;
+    margin-bottom: 10px;
+}
+
+.post-body {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.post:hover {
+    transform: scale(1.02);
+    transition: border 0.2s ease;
+}
+
+.post:hover .post-image{
+    transform: scale(1.1) rotate(-5deg);
+    filter: brightness(1.2);
+    transition: transform 0.2s ease;
+}
+
+
+
+.blog-footer {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.nav-link {
+    color: var(--accent-1);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+

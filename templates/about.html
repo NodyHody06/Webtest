@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASCII Image Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+    <script src="https://kit.fontawesome.com/9574fb689b.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <div class = 'body'>
+        <div class = 'contianer'>
+            <h1 class="head">Lemme tell you something about myself </h1>
+            <p>Hello fellow earthlings I am Zach.
+                I am currently pursuing a bachelor's degree in my hometown, with a great interest in technology and 
+                aspirations of working in the IT field. While I try to be a straightforward, low-key person, I like 
+                learning new things, particularly about technology. This website was created as a personal endeavor to 
+                alleviate boredom. This website has numerous sections for music, art, and self-created projects, 
+                which I hope will represent some originality and progress along the way.
+            </p>
+        </div>
+        <div class = "list">
+            <div class ="image1" id ="same">
+                <img src="{{url_for('static', filename='images/personal/image1.jpg')}}" alt="hi">
+            </div>
+            <div class="image2" id ="same">
+                <img src="{{url_for('static', filename='images/personal/image2.jpg')}}" alt="are">
+            </div>
+            <div class="image3" id ="same">
+                <img src="{{url_for('static', filename='images/personal/image3.jpg')}}" alt="you">
+            </div>
+            <div class="image4" id ="same">
+                <img src="{{url_for('static', filename='images/personal/image4.jpg')}}" alt="ok">
+            </div>
+            <div class="image5" id ="same">
+                <img src="{{url_for('static', filename='images/personal/image5.jpg')}}" alt="?">
+            </div>
+        </div>
+
+        <nav class="social">
+            <li><strong>Follow me on: </strong></li>
+            <li><a href="https://github.com/NodyHody06" target="_blank"><i class="fa fa-github fa-bounce" aria-hidden="true"></i></a></li>
+            <li><a href="https://x.com/Nody_Hody?t=GkrFMS271E7Td2qKMbMpZw&s=08" target="_blank"><i class="fa-brands fa-x-twitter fa-bounce" aria-hidden="true"></i></a></li>
+            <li><a href="https://www.instagram.com/nodyhody/" target="_blank"><i class="fa fa-instagram fa-bounce" aria-hidden="true"></i></a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=100082672941610/" target="_blank"><i class="fa fa-facebook-official fa-bounce" aria-hidden="true"></i></a></li>
+            <li><a href="https://www.reddit.com/u/Nexus_Zuk_lamo/s/e446EENvV2" target="_blank"><i class="fa-brands fa-reddit-alien fa-bounce" aria-hidden="true"></i></a></li>
+        </nav>
+
+    </div>
+</body>

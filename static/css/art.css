@@ -1,0 +1,63 @@
+@font-face {
+    font-family: "FreePixel";
+    src: url("https://sadhost.neocities.org/fonts/FreePixel.ttf") format("truetype");
+}
+
+:root {
+    --background: #0E191A;
+    --main-color: #7107AF;
+    --main-color-dk: #441261;
+    --accent-1: #B5E61D;
+    --accent-2: #EB53D3;
+    --content-spacing: 5px;
+    --background-img: url('/static/images/image.png');
+    --banner: url('/sadgrl/assets/images/full-banner-new.png');
+    --titleBars: url('/sadgrl/assets/images/tiny-bar-2.png');
+    --text-color: white;
+    --link-color: var(--accent-1);
+    --border: 1px solid black;
+    --arrows: url('/sadgrl/assets/images/arrow.png');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    overflow: hidden; /* Prevent body scrolling */
+}
+
+.canvas-container {
+    position: fixed; /* Fixes the canvas to cover the viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Ensure it is behind the overlay content */
+}
+
+
+.overlay-content {
+    font-family: "Freepixel";
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust centering */
+    color: white; /* Change text color for visibility */
+    z-index: 10; /* Make sure it's above the canvas */
+    text-align: center; /* Center the text */
+    padding: 20px;
+    background-color: #0e191aa5;
+    width: 100%;
+    height: 100%;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    overflow-x: auto;
+}
+
+h1, p {
+    margin: 10px 0;
+}

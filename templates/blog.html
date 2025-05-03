@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Center - ASCII Image Generator</title>
+    <link rel="icon" href="{{ url_for('static', filename='images/pfp.jpg') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/blog.css') }}">
+</head>
+<body class="blog-main">
+    <div class="blog-container">
+        <header class="blog-header">
+            <img src="{{ url_for('static', filename='images/monitor.gif') }}" alt="Header Animation" class="header-gif"> 
+            <h1>Blog Center</h1>
+            <p class="blog-subtitle">Thoughts, updates, and ASCII experiments.</p>
+        </header>
+      
+        <section class="blog-posts">
+            <article class="post">
+                <h2 class="post-title">
+                    <img src="{{ url_for('static', filename='images/fountain.gif') }}" alt="Fountain" class="post-image">
+                    Welcome to the ASCII Art Blog
+                </h2>
+                <p class="post-date">May 3, 2025</p>
+                <p class="post-body">
+                    We're excited to launch our new blog! Here, you'll find posts on ASCII art techniques,
+                    creative projects, and updates about our image-to-ASCII tool.
+                </p>
+                
+            </article>
+
+            <article class="post">
+                <h2 class="post-title"> 
+                     <img src="{{ url_for('static', filename='images/fountain.gif') }}" alt="Fountain" class="post-image">
+                    Behind the Pixels: How ASCII Rendering Works
+                </h2>
+                <p class="post-date">April 29, 2025</p>
+                <p class="post-body">
+                    Dive into the history and tech behind ASCII art. Discover how we map pixel brightness
+                    to characters and fine-tune contrast for better visuals.
+                </p>
+            </article>
+
+            <!-- You can duplicate this <article> block for more blog posts -->
+        </section>
+
+        <footer class="blog-footer">
+            <a href="{{ url_for('pages.index') }}" class="nav-link">← Back to Home</a>
+
+        </footer>
+    </div>
+    <img src="{{ url_for('static', filename='images/statue.gif') }}" alt="Statue" class="sticker-left">
+    <img src="{{ url_for('static', filename='images/Going Black And White Sticker.gif') }}" alt="B&W" class="sticker-left">
+     <img src="{{ url_for('static', filename='images/Broken-eng.gif') }}" alt="broken-eng" class="sticker-right">
+     <img src="{{ url_for('static', filename='images/talk.gif') }}" alt="talk" class="sticker-right">
+</body>
+</html>
+

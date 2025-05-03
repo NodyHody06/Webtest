@@ -1,0 +1,227 @@
+ /* Global Reset */
+ @font-face {
+    font-family: "FreePixel";
+    src: url("https://sadhost.neocities.org/fonts/FreePixel.ttf") format("truetype");
+}
+
+:root {
+    --background: #0E191A;
+    --main-color: #7107AF;
+    --main-color-dk: #441261;
+    --accent-1: #B5E61D;
+    --accent-2: #EB53D3;
+    --content-spacing: 5px;
+    --background-img: url('/static/images/image.png');
+    --banner: url('/sadgrl/assets/images/full-banner-new.png');
+    --titleBars: url('/sadgrl/assets/images/tiny-bar-2.png');
+    --text-color: white;
+    --link-color: var(--accent-1);
+    --border: 1px solid black;
+    --arrows: url('/sadgrl/assets/images/arrow.png');
+}
+
+* {
+    font-family: 'FreePixel', arial, Tahoma;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--background);
+    text-align: center;
+    color: var(--accent-2);
+    overflow-x: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.container {
+    max-width: 90vw; /* Use viewport width for a responsive size */
+    max-height: 80vh; /* Use viewport height for responsive height */
+    width: 100%; /* Ensures the container expands as much as possible */
+    padding: 20px; /* Adds padding for better spacing */
+}
+
+
+h3 {
+    text-shadow: 1px;
+}
+
+.file-upload {
+    display: inline-block;
+    margin: 20px;
+}
+
+.upload-label {
+    font-size: 24px;
+    cursor: pointer;
+    color: #EB53D3; /* Example color for the icon */
+}
+
+.file-input {
+    display: none; /* Hide the actual file input */
+}
+
+.upload-label:hover {
+    color: #eb53d4b3;
+}
+
+/* Start styling the page */
+.container-audio {
+    width: 66%;
+    height: auto;
+    margin: 20px auto;
+    overflow: hidden;   
+}
+
+#yt-url {
+
+    border-radius: 6px;
+    height: 30px;
+    width: 200px;
+    text-align: center;
+}
+
+#download-yt-btn {
+    border-radius: 4px;
+    background-color: #777272;
+    height: 30px;
+    width: 100px;
+}
+
+#download-yt-btn:hover {
+    background-color: #77727265;
+}
+#download-button {
+    margin: 9px 4px;
+    border-radius: 4px  ;
+    background-color: #B5E61D;
+    height: 30px;
+    width: 100px;
+}
+
+#download-button:hover {
+    background-color: #b4e61d9c;
+}
+
+audio {
+    width: 100%;
+    color: var(--accent-2);
+}
+
+.audio-queue {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.audio-queue li {
+    color: var(--text-color);
+    padding: 5px;
+}
+
+.audio-queue li:hover {
+    color: #ffffffb8;
+}
+
+.audio-queue li.playing {
+    font-weight: bold;
+    color: var(--accent-1); /* Highlight color for the currently playing track */
+}
+
+.audio-queue li.playing:hover {
+    color: #b4e61dc8;
+}
+
+#prev,#next {
+    color: #EB53D3;
+}
+
+#prev,#next:hover {
+    color: #eb53d47c;
+    transition: .5s;
+
+}
+
+.bars {
+    align-items: flex-end;
+    justify-content: center;
+    display: flex;
+    gap: 0.25rem;
+    height: 4rem;
+    rotate: z 180deg;
+    margin-bottom: 200px;
+}
+
+.bars__item {
+    height: 100%;
+    width: 0.5rem;
+    transition: height 0.1s ease; /* Smooth the bar animation */
+}
+
+.Myplaylist {
+    color: var(--text-color);
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute; /* Centers content relative to viewport */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    max-width: 4000px;
+    overflow-wrap: break-word;
+    overflow-y: hidden;
+    border-radius: 10px;
+    margin-top: 200px;
+}
+
+h1 {
+    margin-bottom: 1px;
+}
+
+/* Style for odd-numbered bars (pink) */
+.bars__item:nth-child(1),
+.bars__item:nth-child(3),
+.bars__item:nth-child(5),
+.bars__item:nth-child(7),
+.bars__item:nth-child(9),
+.bars__item:nth-child(11),
+.bars__item:nth-child(13),
+.bars__item:nth-child(15),
+.bars__item:nth-child(17),
+.bars__item:nth-child(19),
+.bars__item:nth-child(21),
+.bars__item:nth-child(23),
+.bars__item:nth-child(25),
+.bars__item:nth-child(27),
+.bars__item:nth-child(29),
+.bars__item:nth-child(31),
+.bars__item:nth-child(33),
+.bars__item:nth-child(35) {
+    background-color: var(--accent-2); /* Pink color */
+}
+
+/* Style for even-numbered bars (white) */
+.bars__item:nth-child(2),
+.bars__item:nth-child(4),
+.bars__item:nth-child(6),
+.bars__item:nth-child(8),
+.bars__item:nth-child(10),
+.bars__item:nth-child(12),
+.bars__item:nth-child(14),
+.bars__item:nth-child(16),
+.bars__item:nth-child(18),
+.bars__item:nth-child(20),
+.bars__item:nth-child(22),
+.bars__item:nth-child(24),
+.bars__item:nth-child(26),
+.bars__item:nth-child(28),
+.bars__item:nth-child(30),
+.bars__item:nth-child(32),
+.bars__item:nth-child(34),
+.bars__item:nth-child(36) {
+    background-color: #FFFFFF; /* White color */
+}
