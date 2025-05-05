@@ -29,7 +29,7 @@ def create_app():
     return app
 
 # Only for local development
-if __name__ == "__main__":
-    app = create_app()
-    app.run(debug=True)
+#if __name__ == "__main__":
+ #   app = create_app()
+  #  app.run(debug=True)
 
